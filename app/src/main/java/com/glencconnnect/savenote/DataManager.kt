@@ -5,12 +5,13 @@ package com.glencconnnect.savenote
 
 import java.util.*
 
-class DataManager {
+object DataManager {
     val courses = HashMap<String,CourseInfo>()
-    val notes = ArrayList<CourseInfo>()
+    val notes = ArrayList<NoteInfo>()
 
     init {
         initializeCourses()
+        initializeNotes()
     }
 
     private fun initializeCourses() {
@@ -27,5 +28,11 @@ class DataManager {
         courses.put(course.courseId,course)
 
 
+    }
+
+    private fun initializeNotes(){
+
+        var note = NoteInfo(courses.get("android_intents"),"Android Intents","Working Android Intents and starting Activities")
+        notes.add(note)
     }
 }
