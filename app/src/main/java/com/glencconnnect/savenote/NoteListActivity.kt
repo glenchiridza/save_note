@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_note_list.*
 import kotlinx.android.synthetic.main.content_note_list.*
 
+
 class NoteListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
