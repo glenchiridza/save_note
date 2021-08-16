@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
+import androidx.appcompat.content.res.AppCompatResources
 import kotlinx.android.synthetic.main.content_main.*
 import java.util.*
 
@@ -64,5 +65,20 @@ class MainActivity : AppCompatActivity() {
     private fun moveNext() {
         ++notePosition
         displayNote()
+        invalidateOptionsMenu()
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
+
+        if(notePosition >= DataManager.notes.lastIndex){
+            val menuItem = menu?.findItem(R.id.action_next)
+            if (menuItem != null) {
+                menuItem.icon = AppCompatResources.getDrawable(this,R.drawable.ic_end_of_notes_white)
+                menuItem.isEnabled = false
+
+            }
+        }
+
+        return super.onPrepareOptionsMenu(menu)
     }
 }
