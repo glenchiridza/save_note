@@ -53,7 +53,16 @@ class MainActivity : AppCompatActivity() {
 
         return when(item.itemId){
             R.id.action_settings -> true
+            R.id.action_next -> {
+                moveNext()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun moveNext() {
+        ++notePosition
+        displayNote()
     }
 }

@@ -4,8 +4,10 @@
 
     <item
         android:id="@+id/action_next"
-        android:title="Next" />
+        android:title="@string/next"
+        android:icon="@drawable/ic_forward_white"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_settings"
-        android:title="Settings" />
+        android:title="@string/settings" />
 </menu>
