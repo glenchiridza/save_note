@@ -2,6 +2,7 @@ package com.glencconnnect.savenote
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
@@ -97,5 +98,10 @@ class MainActivity : AppCompatActivity() {
         note.text = textNoteText.text.toString()
         note.course = spinnerCourses.selectedItem as CourseInfo
 
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt(EXTRA_NOTE_POSITION,notePosition)
     }
 }
