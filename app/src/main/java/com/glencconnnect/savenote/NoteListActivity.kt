@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_note_list.*
 import kotlinx.android.synthetic.main.content_note_list.*
 
@@ -20,6 +21,8 @@ class NoteListActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+        listItems.layoutManager = LinearLayoutManager(this)
+
 
 //        listNotes.adapter = ArrayAdapter(this,
 //                android.R.layout.simple_list_item_1,
