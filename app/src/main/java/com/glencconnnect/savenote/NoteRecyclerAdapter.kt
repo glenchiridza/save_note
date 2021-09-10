@@ -25,6 +25,7 @@ class NoteRecyclerAdapter(private val context: Context, private val notes: List<
 
         holder.textCourse.text = note.course?.courseTitle
         holder.textTitle.text = note.title
+        holder.notePosition = position
     }
 
     override fun getItemCount(): Int = notes.size
@@ -33,5 +34,7 @@ class NoteRecyclerAdapter(private val context: Context, private val notes: List<
 
         val textCourse = itemView.findViewById<TextView>(R.id.textCourse)
         val textTitle = itemView.findViewById<TextView>(R.id.textTitle)
+        var notePosition = 0
+
     }
 }
