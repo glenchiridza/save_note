@@ -23,6 +23,8 @@ class NoteListActivity : AppCompatActivity() {
         }
         listItems.layoutManager = LinearLayoutManager(this)
 
+        listItems.adapter = NoteRecyclerAdapter(this,DataManager.notes)
+
 
 //        listNotes.adapter = ArrayAdapter(this,
 //                android.R.layout.simple_list_item_1,
