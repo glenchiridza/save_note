@@ -4,6 +4,7 @@
 package com.glencconnnect.savenote
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,11 +31,19 @@ class NoteRecyclerAdapter(private val context: Context, private val notes: List<
 
     override fun getItemCount(): Int = notes.size
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val textCourse = itemView.findViewById<TextView>(R.id.textCourse)
         val textTitle = itemView.findViewById<TextView>(R.id.textTitle)
         var notePosition = 0
+
+        init {
+            itemView.setOnClickListener {
+                val intent = Intent(context,MainActivity::class.java)
+                intent.putExtra(NOTE_POSITION, notePosition)
+                context.startActivity(intent)
+            }
+        }
 
     }
 }
