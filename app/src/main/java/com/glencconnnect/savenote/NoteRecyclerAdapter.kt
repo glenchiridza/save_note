@@ -13,12 +13,9 @@ class NoteRecyclerAdapter(private val context: Context): RecyclerView.Adapter<No
 
     private val layoutInflater = LayoutInflater.from(context)
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-
+        val itemView = layoutInflater.inflate(R.layout.item_note_list,parent,false)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -26,6 +23,10 @@ class NoteRecyclerAdapter(private val context: Context): RecyclerView.Adapter<No
     }
 
     override fun getItemCount(): Int {
+
+    }
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     }
 }
